@@ -1,7 +1,5 @@
 package demo;
 
-import java.net.MalformedURLException;
-import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,7 +34,6 @@ public class TestCases{
         // Set browser to maximize and wait
         driver.manage().window().maximize();
 
-
     }
 
     public void testCase01() throws InterruptedException{
@@ -52,26 +49,16 @@ public class TestCases{
             
               System.out.println("This Script not Passed ");
          }
-          
-        //   Alert alert = driver.switchTo().alert();
-        //  alert.dismiss();
-        //  WebElement popupClose = driver.findElement(By.xpath("//button[@class='M6CB1c rr4y5c']"));
-        //  popupClose.click();
-
-        // Type "calculator" in the Google search bar and press Enter.
+ 
         Thread.sleep(3000);
-        // WebElement searchBox = driver.findElement(By.id("APjFqb"));        
-        // searchBox.sendKeys("Calculator");
 
         // Verify that the Google Calculator loads.
-        WebElement calendarLoads = driver.findElement(By.xpath("//span[@class='XDTKBd z1asCe dAmgBb']"));
-        calendarLoads.isDisplayed();
+        WebElement calculatorLoads = driver.findElement(By.xpath("//span[@class='XDTKBd z1asCe dAmgBb']"));
+        calculatorLoads.isDisplayed();
         
         // Confirm that the initial display shows zero(0).
         WebElement inidisZero = driver.findElement(By.xpath("//span[text()='0']"));
         System.out.println("Initial display shows zero :" + inidisZero.getText());
-
-    //    System.out.println("Getting current google url :" + pageUrl());
 
         System.out.println("End Test case: TestCase01 is completed");
     }
@@ -90,11 +77,12 @@ public class TestCases{
        driver.findElement(By.xpath("//div[text()='='] ")).click();
 
        Thread.sleep(3000);
-    // Confirm that the displayed result is correct (in this case, 12).
+
+      // Confirm that the displayed result is correct (in this case, 12).
       WebElement Result1 =driver.findElement(By.id("cwos"));
        System.out.println("Addition of 5 + 7 :" + Result1.getText());
-
        driver.findElement(By.xpath("//div[text()='AC']")).click();
+
      // Perform a subtraction operation, 15 - 8.
       Thread.sleep(3000);
       driver.findElement(By.xpath("//div[text()='1']")).click();
@@ -104,7 +92,6 @@ public class TestCases{
       driver.findElement(By.xpath("//div[text()='8']")).click();
       driver.findElement(By.xpath("//div[text()='='] ")).click();
 
-    // Thread.sleep(3000);
 
     // Confirm that the displayed result is correct (in this case, 7).
      WebElement Result2 =driver.findElement(By.id("cwos"));
@@ -143,9 +130,9 @@ public class TestCases{
       
       System.out.println("End Test case: TestCase03 is completed successfully");
     }
+
      // TestCase04: Verify Division Operation
     // **Description: **Verify that the Google Calculator can perform division correctly.
-
     public  void testCase04() throws InterruptedException{
         
       System.out.println("Start Test case: TestCase04 Started :");
@@ -178,11 +165,3 @@ public class TestCases{
 }
 
 
- // public static WebDriver createDriver() throws MalformedURLException {
-    //     ChromeOptions options = new ChromeOptions();
-    //     driver = new ChromeDriver(options);
-		//     WebDriverManager.chromedriver().setup();
-    //     driver.manage().window().maximize();
-
-    //     return driver;
-    // }
